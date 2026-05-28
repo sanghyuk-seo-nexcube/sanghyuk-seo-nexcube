@@ -5,27 +5,21 @@
         <a href="https://github.com/NousResearch/hermes-agent">
           <img src="./assets/hermes-agent-icon.png" alt="Hermes Agent icon" width="72" align="left">
         </a>
-        <strong>Hermes Agent ☤</strong><br>
-        <sub>NousResearch/hermes-agent · Codex stream compatibility</sub>
+        <strong>Hermes Agent ☤ 기여</strong><br>
+        <sub>NousResearch/hermes-agent · Codex stream reliability</sub>
       </p>
       <br clear="left">
-      <h3>Codex 스트리밍 안정화</h3>
+      <h3>Codex 긴 입력 스트리밍 안정화</h3>
       <p>
-        긴 Codex 입력에서 backend prefill 지연을 first-byte 장애로 오판해
-        불필요하게 retry하던 흐름을 줄였습니다.
+        긴 <code>openai-codex</code> 요청에서 backend prefill 지연을
+        first-byte 장애로 오판해 불필요하게 reconnect/retry하던 문제를 줄였습니다.
       </p>
-      <p>
-        큰 컨텍스트는 보존하고, Codex stream 특성에 맞춰 기다릴 구간과
-        재연결할 구간을 분리했습니다.
-      </p>
-      <p>
-        <a href="https://github.com/NousResearch/hermes-agent/pull/33390">
-          <img src="https://img.shields.io/badge/Merged%20PR-%2333390-238636?style=flat-square&logo=github" alt="Merged PR #33390">
-        </a>
-        <a href="https://github.com/NousResearch/hermes-agent/commit/283bb810e7211acc38171d3171bb6049ff6d4dba">
-          <img src="https://img.shields.io/badge/Commit-283bb810e-0969da?style=flat-square&logo=git" alt="Commit 283bb810e">
-        </a>
-      </p>
+      <ul>
+        <li><strong>문제:</strong> 큰 컨텍스트 요청은 첫 SSE 이벤트 전에 오래 걸릴 수 있는데, Hermes가 이를 stream 실패로 판단했습니다.</li>
+        <li><strong>해결:</strong> 작은 요청 no-event, 큰 요청 prefill 대기, 이벤트 이후 idle을 분리하는 3-case watchdog 정책을 적용했습니다.</li>
+        <li><strong>Upstream 반영:</strong> 제 원본 PR <a href="https://github.com/NousResearch/hermes-agent/pull/33383">#33383</a>이 maintainer salvage PR <a href="https://github.com/NousResearch/hermes-agent/pull/33390">#33390</a>로 병합됐습니다.</li>
+        <li><strong>근거:</strong> maintainer가 <a href="https://github.com/NousResearch/hermes-agent/pull/33383#issuecomment-4557376403">@sanghyuk-seo-nexcube 멘션과 authorship 보존</a>을 남겼고, 관련 이슈 <a href="https://github.com/NousResearch/hermes-agent/issues/33075">#33075</a>에서도 fix 적용 후 개선이 확인됐습니다.</li>
+      </ul>
     </td>
   </tr>
   <tr>
