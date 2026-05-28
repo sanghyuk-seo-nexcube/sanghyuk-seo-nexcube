@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td width="62%" valign="top">
+    <td valign="top">
       <p>
         <a href="https://github.com/NousResearch/hermes-agent">
           <img src="./assets/hermes-agent-icon.png" alt="Hermes Agent icon" width="72" align="left">
@@ -27,7 +27,9 @@
         </a>
       </p>
     </td>
-    <td width="38%" valign="top" align="center">
+  </tr>
+  <tr>
+    <td align="center">
       <a href="https://github.com/NousResearch/hermes-agent/pull/33390">
         <img src="https://opengraph.githubassets.com/sanghyuk-hermes-agent-pr33390-card/NousResearch/hermes-agent/pull/33390" alt="Upstream merged PR #33390 thumbnail" width="100%">
       </a>
