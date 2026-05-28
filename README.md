@@ -31,10 +31,10 @@
   <tr>
     <td align="center">
       <a href="https://github.com/NousResearch/hermes-agent/pull/33390">
-        <img src="https://opengraph.githubassets.com/sanghyuk-hermes-agent-pr33390-card/NousResearch/hermes-agent/pull/33390" alt="Upstream merged PR #33390 thumbnail" width="100%">
+        <img src="https://opengraph.githubassets.com/sanghyuk-hermes-agent-pr33390-card/NousResearch/hermes-agent/pull/33390" alt="PR #33390 thumbnail" width="76%">
       </a>
       <sub>
-        <a href="https://github.com/NousResearch/hermes-agent/pull/33390">Upstream merged PR #33390</a>
+        <a href="https://github.com/NousResearch/hermes-agent/pull/33390">PR #33390</a>
       </sub>
     </td>
   </tr>
